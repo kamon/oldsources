@@ -1,0 +1,25 @@
+﻿<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="jubinsite.importexport">
+
+
+  <!-- -*- extra stuff goes here -*- -->
+
+    <browser:page for="*"
+                  name="partner_import"
+                  class=".importview.PartnerImportView"
+                  template="importview.pt"
+                  allowed_interface=".importview.IPartnerImportView"
+                  permission="cmf.ModifyPortalContent"
+             />
+
+    <browser:page for="*"
+                  name="partner_export"
+                  class=".exportview.PartnerExportView"
+                  template="exportview.pt"
+                  allowed_interface=".exportview.IPartnerExportView"
+                  permission="cmf.ModifyPortalContent"
+             />
+
+</configure>

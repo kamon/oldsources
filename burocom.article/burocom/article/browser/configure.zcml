@@ -1,0 +1,23 @@
+﻿<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="burocom.article">
+
+  <browser:page
+        for="burocom.article.interfaces.IBurocomArticle"
+        name="article_view"
+        template="article.pt"
+        permission="zope2.View"
+      />
+
+    <browser:resource
+		name="burocom-article.js"
+		file="static/article.js"
+	/>
+	<browser:resource
+	    name="burocom-article.css"
+	    file="static/article.css"
+	/>
+
+	
+</configure>

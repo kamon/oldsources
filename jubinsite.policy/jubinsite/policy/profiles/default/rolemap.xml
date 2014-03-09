@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<rolemap>
+  <roles>
+    <role name="JubinSiteManager"/>
+  </roles>
+  <permissions>
+    <permission name="Review portal content" acquire="True">
+      <role name="Manager"/>
+      <role name="JubinSiteManager"/>
+      <role name="Reviewer"/>
+    </permission>
+    <permission name="View management screens"
+                acquire="True">
+      <role name="Manager"/>
+      <role name="JubinSiteManager"/>
+      <role name="Owner"/>
+    </permission>
+    <!-- permission name="Add portal member"
+                acquire="False">
+        <role name="Manager" />
+        <role name="Owner" />
+    </permission -->
+  </permissions>
+</rolemap>

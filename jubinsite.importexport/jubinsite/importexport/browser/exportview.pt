@@ -1,0 +1,35 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="jubinsite.importexport">
+<body>
+    <div metal:fill-slot="main">
+        <tal:main-macro metal:define-macro="main"
+                        tal:define="message request/message | python:None;">
+
+            <tal:block condition ="message">
+                <dl class="portalMessage info">
+                    <dt i18n:translate="label_info">Info</dt>
+
+                    <dd tal:content="message">message</dd>
+                </dl>
+
+            </tal:block>
+
+            <form action="#" method="post"
+                  tal:attributes="action string:${context/absolute_url}/partner_export">
+                   <label for="export_selection" >S&eacute;lection</label>
+                   <select name="export_selection" id="export_selection">
+                       <option value="stations" >Stations</option>
+                       <option value="restaurants" >Restaurants</option>
+                       <option value="commerces" >Partenaires commerciaux</option>
+                   </select>
+                  <input type="hidden" name="export.submitted" value="True">
+                  <input type="submit" name="submit" id="submit"
+                          value="Exporter">
+            </form>
+
+        </tal:main-macro>
+    </div>
+</body>
+</html>
